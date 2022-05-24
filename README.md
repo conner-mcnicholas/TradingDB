@@ -16,5 +16,5 @@ As a data engineer, you are asked to build a data pipeline that produces a datas
 (work deliverable captured in run.ipynb)
 
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/databricks_notebook.png?raw=true)
-
+&nbsp;
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/finalsuccess.png?raw=true)
