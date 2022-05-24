@@ -6,5 +6,5 @@
 
 ## Step 2: Data Ingestion
 
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/databricks_notebook.png?raw=true)
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/finalsuccess.png?raw=true)
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/databricks_notebook.png?raw=true)
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/finalsuccess.png?raw=true)
