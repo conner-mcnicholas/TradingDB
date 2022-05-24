@@ -14,4 +14,5 @@ As a data engineer, you are asked to build a data pipeline that produces a datas
 ## Step 2: Data Ingestion
 
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/databricks_notebook.png?raw=true)
+
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/finalsuccess.png?raw=true)
