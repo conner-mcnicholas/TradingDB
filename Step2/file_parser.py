@@ -1,10 +1,34 @@
+# Databricks notebook source
 from datetime import datetime
 import json
 import pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
-#from pyspark.sql import sparkContext
+
+#if not using preconfigured databricks cluster as kernel
+#spark.conf.set("fs.azure.account.key.pipelinestorageacctaus.blob.core.windows.net","f6fWRdrrX8qYB9a1y2Rlgu7qCuyeHuD59j3UIb0hi3ZanAn8DUmej+uofzFi7irJm954fTa5LtBb+AStzjJHYA==")
+#spark.conf.set("spark.hadoop.fs.azure.account.key.your_storage_account.blob.core.windows.net","f6fWRdrrX8qYB9a1y2Rlgu7qCuyeHuD59j3UIb0hi3ZanAn8DUmej+uofzFi7irJm954fTa5LtBb+AStzjJHYA==")
+#spark.conf.set("fs.azure.sas.pipelineauscontainer.pipelinestorageacctaus.blob.core.windows.net","si=databricks_access&spr=https&sv=2021-06-08&sr=c&sig=ugpsC3zLJtG3xCkPh48p%2BHZUf7IWZYvu%2BVOJ2837L08%3D")
+
+#--begin azure blob mounting---
+storageAccountName = 'pipelinestorageaccaus'
+storageAccountAccessKey = 'f6fWRdrrX8qYB9a1y2Rlgu7qCuyeHuD59j3UIb0hi3ZanAn8DUmej+uofzFi7irJm954fTa5LtBb+AStzjJHYA=='
+blobContainerName = 'pipelineauscontainer'
+
+
+if not any(mount.mountPoint == '/mnt/output_dir/' for mount in dbutils.fs.mounts()):
+  try:
+    dbutils.fs.mount(
+    source = "wasbs://{}@{}.blob.core.windows.net".format(blobContainerName, storageAccountName),
+    mount_point = "/mnt/output_dir/",
+    extra_configs = {'fs.azure.account.key.' + storageAccountName + '.blob.core.windows.net': storageAccountAccessKey}
+  )
+  except Exception as e:
+    print("already mounted. Try to unmount first")
+
+display(dbutils.fs.ls("dbfs:/mnt/output_dir"))
+#--end azure blob mounting---
 
 def parse_csv(line):
     record_type_pos = 2
@@ -94,12 +118,10 @@ common_event_schema = StructType([StructField('trade_dt', DateType(), True),
 dates = ['2020-08-05','2020-08-06']
 csvlist = []
 jsonlist = []
-#spark = SparkSession.builder.master(‘local’).appName(‘app’).getOrCreate()
 spark = SparkSession.builder.getOrCreate()
-spark.conf.set("fs.azure.account.key.asastorewin.blob.core.windows.net","accessKey")
 for dt in dates:
-    rawcsv = spark.sparkContext.textFile(f"wasbs://newestcontainer@asastorewin.blob.core.windows.net/data/csv/%s/NYSE/*.txt" %dt)
-    rawjson = spark.sparkContext.textFile(f"wasbs://newestcontainer@asastorewin.blob.core.windows.net/data/json/%s/NASDAQ/*.txt" %dt)
+    rawcsv = spark.sparkContext.textFile(f"wasbs://pipelineauscontainer@pipelinestorageacctaus.blob.core.windows.net/data/csv/%s/NYSE/*.txt" %dt)
+    rawjson = spark.sparkContext.textFile(f"wasbs://pipelineauscontainer@pipelinestorageacctaus.blob.core.windows.net/data/json/%s/NASDAQ/*.txt" %dt)
     parsedcsv = rawcsv.map(lambda line: parse_csv(line))
     parsedjson = rawjson.map(lambda line: parse_json(line))
     datacsv = spark.createDataFrame(parsedcsv, common_event_schema)
@@ -111,10 +133,6 @@ csv_data = csvlist[0].union(csvlist[1])
 json_data= jsonlist[0].union(jsonlist[1])
 all_data = csv_data.union(json_data)
 
-print('csv data: ')
-csv_data.show()
-
-print('\n\njson data: ')
-json_data.show()
-
-#json_data.write.partitionBy("partition").mode("overwrite").parquet("wasbs://newestcontainer@asastorewin.blob.core.windows.net/output_dir")
+print('all parsed and combined data: ')
+all_data.show()
+all_data.write.partitionBy("partition").mode("overwrite").parquet("dbfs:/mnt/output_dir")

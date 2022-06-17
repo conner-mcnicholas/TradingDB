@@ -1,0 +1,1 @@
+curl --netrc-file ~/GuidedCapTradingDB/.netrc -X POST https://adb-<hidden_databricks_group_id>.15.azuredatabricks.net/api/2.0/preview/scim/v2/ServicePrincipals --header 'Content-type: application/scim+json' --data @add-service-principal.json | jq .

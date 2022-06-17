@@ -1,0 +1,15 @@
+{
+  "schemas": [ "urn:ietf:params:scim:schemas:core:2.0:ServicePrincipal" ],
+  "applicationId": "b89152be-33f9-4689-8ba9-7de1546b8429",
+  "displayName": "databricks_registerd_app",
+  "groups": [
+    {
+      "value": "3064050213402635"
+    }
+  ],
+  "entitlements": [
+    {
+      "value":"allow-cluster-create"
+    }
+  ]
+}

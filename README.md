@@ -1,3 +1,4 @@
+??? from here until ???END lines may have been inserted/deleted
 # Guided Capstone
 
 Investment analysts want to better understand their raw quote data by referencing specific trade indicators which occur whenever their quote data is generated, including:
@@ -13,10 +14,9 @@ As a data engineer, you are asked to build a data pipeline that produces a datas
 
 ## Step 2: Data Ingestion
 
-(work deliverable captured in run.ipynb)
+work deliverable captured in Step2/run.ipynb
 
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/databricks_notebook.png?raw=true)
+## Step 3: End-of-Day (EOD) Data Load
 
-&emsp; <br />
-
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/finalsuccess.png?raw=true)
+work deliverable captured in Step3/end_of_day_ETL.py <br>
+(originally ran in databricks pyspark cluster notebook)
