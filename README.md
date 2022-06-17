@@ -15,6 +15,8 @@ As a data engineer, you are asked to build a data pipeline that produces a datas
 
 work deliverable captured in Step2/run.ipynb
 
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/finalsuccess.png?raw=true)
+
 ## Step 3: End-of-Day (EOD) Data Load
 
 work deliverable captured in Step3/end_of_day_ETL.py <br>
