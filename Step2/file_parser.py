@@ -16,7 +16,6 @@ storageAccountName = 'pipelinestorageaccaus'
 storageAccountAccessKey = '<hidden>'
 blobContainerName = 'pipelineauscontainer'
 
-
 if not any(mount.mountPoint == '/mnt/output_dir/' for mount in dbutils.fs.mounts()):
   try:
     dbutils.fs.mount(
