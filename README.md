@@ -1,4 +1,3 @@
-??? from here until ???END lines may have been inserted/deleted
 # Guided Capstone
 
 Investment analysts want to better understand their raw quote data by referencing specific trade indicators which occur whenever their quote data is generated, including:
