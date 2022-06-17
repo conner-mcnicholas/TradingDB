@@ -9,7 +9,7 @@ As a data engineer, you are asked to build a data pipeline that produces a datas
 
 ## Step 1: Database Table Design
 
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/arch_diagram.png?raw=true)
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/arch_diagram.png?raw=true)
 
 ## Step 2: Data Ingestion
 
@@ -19,3 +19,5 @@ work deliverable captured in Step2/run.ipynb
 
 work deliverable captured in Step3/end_of_day_ETL.py <br>
 (originally ran in databricks pyspark cluster notebook)
+
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/notebook_results.png?raw=true)
