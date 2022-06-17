@@ -13,7 +13,7 @@ from pyspark.sql.types import *
 
 #--begin azure blob mounting---
 storageAccountName = 'pipelinestorageaccaus'
-storageAccountAccessKey = 'f6fWRdrrX8qYB9a1y2Rlgu7qCuyeHuD59j3UIb0hi3ZanAn8DUmej+uofzFi7irJm954fTa5LtBb+AStzjJHYA=='
+storageAccountAccessKey = '<hidden>'
 blobContainerName = 'pipelineauscontainer'
 
 
