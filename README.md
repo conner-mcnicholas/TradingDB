@@ -26,8 +26,12 @@ work deliverable captured in Step3/end_of_day_ETL.py <br>
 
 ## Step 4: Analytical ETL
 
-I did these exercises in a Databricks Notebook, found in the Step4 dir.  There were several
-erroneous or miscommunicated instructions that frustrated this effort:
+I did these exercises in a Databricks Notebook, found in the Step4 dir.  The fully reconciled
+quotes and trade records appear as follows:<br>
+
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/complete_analysis.png?raw=true)<br>
+
+There were several erroneous or miscommunicated instructions that frustrated this effort:<br>
 
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/3hr_mavg.png?raw=true)<br>
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/wrongtable.png?raw=true)<br>
