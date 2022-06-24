@@ -31,5 +31,6 @@ erroneous or miscommunicated instructions that frustrated this effort:
 
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/3hr_mavg.png?raw=true)<br>
 ![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/wrongtable.png?raw=true)<br>
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/triplewrong.png?raw=true)<br>
-![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/wrong_query.png?raw=true)
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/which_tmp_table.png?raw=true)<br>
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/wrong_query.png?raw=true)<br>
+![alt text](https://github.com/conner-mcnicholas/TradingDB/blob/main/imgs/simple_alternative.png?raw=true)
