@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pipeline-orchestration
+Version: 0.0.1
+Summary: Data pipeline for ingesting and analyzing csv+json trading data
+Home-page: 
+Author: Conner McNicholas
+Author-email: connermcnicholas@gmail.com.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+
+UNKNOWN
+

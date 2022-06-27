@@ -1,0 +1,6 @@
+README.md
+setup.py
+pipeline_orchestration.egg-info/PKG-INFO
+pipeline_orchestration.egg-info/SOURCES.txt
+pipeline_orchestration.egg-info/dependency_links.txt
+pipeline_orchestration.egg-info/top_level.txt
